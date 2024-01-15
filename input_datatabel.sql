@@ -62,3 +62,18 @@ INSERT INTO product (product_name, store_name, product_price, total_sold, rating
 ('Victor Multithermobag 9030', 'RacketExpress Greysia', 120.00, 25, 4.7, true, 30, 8);
 
 select * from product;
+
+---- Memasukkan data detail pemebelian
+INSERT INTO order_detail (id_customer, id_product, quantity) VALUES
+(1, 1, 2),  -- Id 1 membeli 2 Yonex Nanoflare 800
+(2, 2, 1),  -- Id 2 membeli 1 Victor Hypernano X 900
+(3, 3, 3),  -- Id 3 membeli 3 Li-Ning Windstorm 72
+(4, 4, 2),  -- Id 4 membeli 2 Yonex Aerosensa 40
+(5, 5, 1),  -- Id 5 membeli 1 Asics Gel-Rocket 9
+(6, 6, 3),  -- Id 6 membeli 3 Yonex BG-80 Power
+(7, 7, 2),  -- Id 7 membeli 2 Kawasaki King K8
+(8, 8, 1),  -- Id 8 membeli 1 Li-Ning A900
+(9, 9, 3),  -- Id 9 membeli 3 Yonex Pro Series 9
+(10, 10, 2);-- Id 10 membeli 2 Victor Multithermobag 9030
+
+select * from order_detail;

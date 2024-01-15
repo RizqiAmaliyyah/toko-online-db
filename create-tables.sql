@@ -65,3 +65,15 @@ UPDATE product SET store_name = 'RacketExpress Greysia' WHERE id_product = 10;
 
 select * from product;
 
+-- Tabel Order Detail
+CREATE TABLE order_detail (
+  id_order_detail INT PRIMARY KEY AUTO_INCREMENT,
+  id_customer INT,
+  id_product INT,
+  quantity INT NOT NULL,
+  order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (id_customer) REFERENCES customer(id_customer),
+  FOREIGN KEY (id_product) REFERENCES product(id_product)
+);
+
+select * from order_detail; 
