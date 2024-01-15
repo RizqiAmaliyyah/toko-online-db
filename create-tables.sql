@@ -26,6 +26,18 @@ CREATE TABLE product (
   FOREIGN KEY (id_category) REFERENCES category(id_category)
 );
 
+-- Tabel Store
+CREATE TABLE store (
+  id_store INT PRIMARY KEY AUTO_INCREMENT,
+  store_name VARCHAR(50) NOT NULL,
+  store_location VARCHAR(100) NOT NULL,
+  chat_process VARCHAR(50)
+);
 
+-- Tabel Category
+CREATE TABLE category (
+  id_category INT PRIMARY KEY AUTO_INCREMENT,
+  category_name VARCHAR(50) NOT NULL
+);
 
 
