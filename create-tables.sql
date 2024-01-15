@@ -12,19 +12,7 @@ CREATE TABLE customer (
   gender ENUM('Man', 'Woman') NOT NULL
 );
 
--- Tabel Product
-CREATE TABLE product (
-  id_product INT PRIMARY KEY AUTO_INCREMENT,
-  product_name VARCHAR(100) NOT NULL,
-  store_name VARCHAR(50) NOT NULL,
-  product_price DECIMAL(10, 2) NOT NULL,
-  total_sold INT NOT NULL,
-  rating INT,
-  shipping_fee BOOLEAN,
-  stock INT,
-  FOREIGN KEY (store_name) REFERENCES store(store_name),
-  FOREIGN KEY (id_category) REFERENCES category(id_category)
-);
+select * from customer;
 
 -- Tabel Store
 CREATE TABLE store (
@@ -34,10 +22,29 @@ CREATE TABLE store (
   chat_process VARCHAR(50)
 );
 
+select * from store;
+
 -- Tabel Category
 CREATE TABLE category (
   id_category INT PRIMARY KEY AUTO_INCREMENT,
   category_name VARCHAR(50) NOT NULL
 );
 
+select * from category;
 
+-- Tabel Product
+CREATE TABLE product (
+  id_product INT PRIMARY KEY AUTO_INCREMENT,
+  product_name VARCHAR(100) NOT NULL,
+  product_price DECIMAL(10, 2) NOT NULL,
+  total_sold INT NOT NULL,
+  rating INT,
+  shipping_fee BOOLEAN,
+  stock INT,
+  id_category INT,
+  store_id INT,
+  FOREIGN KEY (store_id) REFERENCES store(id_store),
+  FOREIGN KEY (id_category) REFERENCES category(id_category)
+);
+
+select * from product;
