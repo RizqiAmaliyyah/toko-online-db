@@ -47,4 +47,21 @@ CREATE TABLE product (
   FOREIGN KEY (id_category) REFERENCES category(id_category)
 );
 
+-- Alter the product table to add the store_name column
+ALTER TABLE product ADD COLUMN store_name VARCHAR(50) NOT NULL;
+
+-- Update the existing data with proper store_name values
+
+UPDATE product SET store_name = 'SportsRacket World' WHERE id_product = 1;
+UPDATE product SET store_name = 'RacketHub' WHERE id_product = 2;
+UPDATE product SET store_name = 'PlayHard Ginting Store' WHERE id_product = 3;
+UPDATE product SET store_name = 'RacketAhsan Sports' WHERE id_product = 4;
+UPDATE product SET store_name = 'ActiveRacket Owi' WHERE id_product = 5;
+UPDATE product SET store_name = 'FitnessRacket Land Hendra' WHERE id_product = 6;
+UPDATE product SET store_name = 'RacketGalaxy Kevin' WHERE id_product = 7;
+UPDATE product SET store_name = 'SportingRacket Liliyana' WHERE id_product = 8;
+UPDATE product SET store_name = 'ProRacket Fitriani' WHERE id_product = 9;
+UPDATE product SET store_name = 'RacketExpress Greysia' WHERE id_product = 10;
+
 select * from product;
+
