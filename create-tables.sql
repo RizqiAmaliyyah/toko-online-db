@@ -76,4 +76,7 @@ CREATE TABLE order_detail (
   FOREIGN KEY (id_product) REFERENCES product(id_product)
 );
 
+ALTER TABLE order_detail
+ADD COLUMN transaction_date DATE;
+
 select * from order_detail; 

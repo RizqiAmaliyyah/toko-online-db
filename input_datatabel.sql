@@ -61,6 +61,14 @@ INSERT INTO product (product_name, store_name, product_price, total_sold, rating
 ('Yonex Pro Series 9', 'ProRacket Fitriani', 300.00, 20, 4.8, true, 40, 1),
 ('Victor Multithermobag 9030', 'RacketExpress Greysia', 120.00, 25, 4.7, true, 30, 8);
 
+-- Mengubah dalam bentuk rupiah
+ALTER TABLE product
+MODIFY COLUMN product_price DECIMAL(15, 2);
+
+-- ALTER TABLE product
+UPDATE product
+SET product_price = product_price * 1000;
+
 select * from product;
 
 ---- Memasukkan data detail pemebelian
@@ -75,5 +83,47 @@ INSERT INTO order_detail (id_customer, id_product, quantity) VALUES
 (8, 8, 1),  -- Id 8 membeli 1 Li-Ning A900
 (9, 9, 3),  -- Id 9 membeli 3 Yonex Pro Series 9
 (10, 10, 2);-- Id 10 membeli 2 Victor Multithermobag 9030
+
+-- Mengupdate data detail pemebelian dengan tanggal transaksi
+UPDATE order_detail
+SET transaction_date = '2024-01-01'
+WHERE id_customer = 1 AND id_product = 1;
+
+UPDATE order_detail
+SET transaction_date = '2024-01-02'
+WHERE id_customer = 2 AND id_product = 2;
+
+UPDATE order_detail
+SET transaction_date = '2024-01-03'
+WHERE id_customer = 3 AND id_product = 3;
+
+UPDATE order_detail
+SET transaction_date = '2024-01-04'
+WHERE id_customer = 4 AND id_product = 4;
+
+UPDATE order_detail
+SET transaction_date = '2024-01-05'
+WHERE id_customer = 5 AND id_product = 5;
+
+UPDATE order_detail
+SET transaction_date = '2024-01-06'
+WHERE id_customer = 6 AND id_product = 6;
+
+UPDATE order_detail
+SET transaction_date = '2024-01-07'
+WHERE id_customer = 7 AND id_product = 7;
+
+UPDATE order_detail
+SET transaction_date = '2024-01-08'
+WHERE id_customer = 8 AND id_product = 8;
+
+UPDATE order_detail
+SET transaction_date = '2024-01-09'
+WHERE id_customer = 9 AND id_product = 9;
+
+UPDATE order_detail
+SET transaction_date = '2024-01-10'
+WHERE id_customer = 10 AND id_product = 10;
+
 
 select * from order_detail;
